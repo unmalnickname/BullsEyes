@@ -9,21 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var currentValue : Int = 0
+    var currentValue : Int = 50
+    @IBOutlet weak var slider: UISlider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        currentValue = lroundf(slider.value)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recrea ted.
     }
     @IBAction func sliderMover(_ slider: UISlider){
         print("The Value of the Slider is \(slider.value)")
-        currentValue = lround(Double(slider.value))
-        
+        currentValue = lroundf(slider.value)
+
     }
     @IBAction func showAlert(){
         let message = "The Value of the Slider is \(currentValue)"
