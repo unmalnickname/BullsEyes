@@ -9,13 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var currentValue : Int = 50
+    var currentValue : Int = 0
     @IBOutlet weak var slider: UISlider!
+    var targetValue: Int = 0
+    @IBOutlet weak var targetLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
-
+        starNewRound()
+    }
+    func updateLabels() {
+        targetLabel.text = String(targetValue)
+    }
+    func starNewRound(){
+        targetValue = 1 + Int(arc4random_uniform(100))
+        currentValue = 0
+        slider.value = Float(currentValue)
+        updateLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +39,19 @@ class ViewController: UIViewController {
 
     }
     @IBAction func showAlert(){
-        let message = "The Value of the Slider is \(currentValue)"
+        
+        var difference: Int
+        if currentValue > targetValue {
+            difference = currentValue - targetValue
+        }else if targetValue > currentValue{
+            difference = targetValue - currentValue
+        } else {
+            difference = 0
+        }
+            
+        
+        
+        let message = "The Value of the Slider is \(currentValue)" + "\n The target value is: \(targetValue)" + "\nThe difference is: \(difference)"
         
         let alert = UIAlertController(title: "Hello, Comics Fans", message: message, preferredStyle: .alert)
 
@@ -37,10 +60,13 @@ class ViewController: UIViewController {
         alert.addAction(action)
 
         present(alert, animated: true, completion: nil)
+        starNewRound()
+}
+    
 }
 
    
   
-}
+
 
 
