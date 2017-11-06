@@ -1,79 +1,78 @@
 //
 //  ViewController.swift
-//  BullsEyes
+//  BullsEye
 //
-//  Created by Luis Avila on 10/31/17.
-//  Copyright © 2017 Luis Avila. All rights reserved.
+//  Created by Main Account on 6/27/17.
+//  Copyright © 2017 Razeware LLC. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    var currentValue : Int = 0
+    var currentValue = 0
     @IBOutlet weak var slider: UISlider!
-    var targetValue: Int = 0
+    var targetValue = 0
     @IBOutlet weak var targetLabel: UILabel!
     var score = 0
     @IBOutlet weak var scoreLabel: UILabel!
-    
+    var round = 0
+    @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
-        starNewRound()
+        startNewRound()
     }
+    
     func updateLabels() {
         targetLabel.text = String(targetValue)
-//        scoreLabel.text
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
-    func starNewRound(){
+    
+    func startNewRound() {
+        round += 1
         targetValue = 1 + Int(arc4random_uniform(100))
-        currentValue = 0
+        currentValue = 50
         slider.value = Float(currentValue)
         updateLabels()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recrea ted.
+        // Dispose of any resources that can be recreated.
     }
-    @IBAction func sliderMover(_ slider: UISlider){
-        print("The Value of the Slider is \(slider.value)")
+    
+    @IBAction func sliderMove(_ slider: UISlider) {
+        print("The value of slider is now: \(slider.value)")
         currentValue = lroundf(slider.value)
-
     }
-    @IBAction func showAlert(){
+//    @IBAction func sliderMoved(_ slider: UISlider) {
+//        print("The value of slider is now: \(slider.value)")
+//        currentValue = lroundf(slider.value)
+//    }
+    
+    @IBAction func showAlert() {
         
-//        var difference: Int
-//        if currentValue > targetValue {
-//            difference = currentValue - targetValue
-//        }else if targetValue > currentValue{
-//            difference = targetValue - currentValue
-//        } else {
-//            difference = 0
-//        }
-        let difference: Int = abs(targetValue - currentValue)
+        let difference = abs(targetValue - currentValue)
         let points = 100 - difference
+        
         score += points
         
         let message = "You scored \(points) points"
         
-        let alert = UIAlertController(title: "Hello, Comics Fans", message: message, preferredStyle: .alert)
-
-        let action = UIAlertAction(title: "Marvel", style: .default, handler: nil)
+        let alert = UIAlertController(title: "Hello, World!", message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         
         alert.addAction(action)
-
+        
         present(alert, animated: true, completion: nil)
-        starNewRound()
-}
+        
+        startNewRound()
+        
+    }
     
 }
-
-   
-  
-
-
-
 
