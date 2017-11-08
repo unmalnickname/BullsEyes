@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A04A29CA1FB25A6200B64832 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A29C91FB25A6200B64832 /* AboutViewController.swift */; };
+		A04A29CC1FB2713500B64832 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A29CB1FB2713500B64832 /* AboutMeViewController.swift */; };
 		A0E506A41FA8CDBF009F3F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E506A31FA8CDBF009F3F93 /* AppDelegate.swift */; };
 		A0E506A61FA8CDBF009F3F93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E506A51FA8CDBF009F3F93 /* ViewController.swift */; };
 		A0E506A91FA8CDBF009F3F93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E506A71FA8CDBF009F3F93 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		A04A29C91FB25A6200B64832 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A04A29CB1FB2713500B64832 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		A0E506A01FA8CDBF009F3F93 /* BullsEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E506A31FA8CDBF009F3F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E506A51FA8CDBF009F3F93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				A0E506A31FA8CDBF009F3F93 /* AppDelegate.swift */,
 				A0E506A51FA8CDBF009F3F93 /* ViewController.swift */,
+				A04A29CB1FB2713500B64832 /* AboutMeViewController.swift */,
 				A04A29C91FB25A6200B64832 /* AboutViewController.swift */,
 				A0E506A71FA8CDBF009F3F93 /* Main.storyboard */,
 				A0E506AA1FA8CDBF009F3F93 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			files = (
 				A04A29CA1FB25A6200B64832 /* AboutViewController.swift in Sources */,
 				A0E506A61FA8CDBF009F3F93 /* ViewController.swift in Sources */,
+				A04A29CC1FB2713500B64832 /* AboutMeViewController.swift in Sources */,
 				A0E506A41FA8CDBF009F3F93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
